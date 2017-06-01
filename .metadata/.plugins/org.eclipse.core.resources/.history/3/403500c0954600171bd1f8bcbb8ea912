@@ -1,0 +1,9 @@
+package test3;
+
+public class ExecutionClass {
+	
+	public void doSomething(){
+		System.out.println("Calculate the time i take");
+	}
+
+}

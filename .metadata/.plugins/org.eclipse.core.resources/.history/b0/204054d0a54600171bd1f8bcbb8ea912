@@ -1,0 +1,45 @@
+package test2;
+
+public class StudentInformation {
+	String name;
+	int studentId;
+	double GPA;
+	
+	public StudentInformation(int studentId,String name,double GPA){
+		this.studentId=studentId;
+		this.name=name;
+		this.GPA=GPA;
+		
+		
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getStudentId() {
+		return studentId;
+	}
+
+	public void setStudentId(int studentId) {
+		this.studentId = studentId;
+	}
+
+	public double getGPA() {
+		return GPA;
+	}
+
+	public void setGPA(double gPA) {
+		GPA = gPA;
+	}
+	
+	public String toString() {
+        return String.format("%d\t%s\t%d", studentId, name, GPA);
+    }
+
+
+}

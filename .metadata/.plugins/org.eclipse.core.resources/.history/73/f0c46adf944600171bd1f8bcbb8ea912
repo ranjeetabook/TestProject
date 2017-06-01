@@ -1,0 +1,13 @@
+package test3;
+
+public class MeasureTool {
+ 
+	
+	public long startTime(){
+		return System.nanoTime();
+		
+	}
+	public long endTime(){
+		return System.nanoTime();
+	}
+}

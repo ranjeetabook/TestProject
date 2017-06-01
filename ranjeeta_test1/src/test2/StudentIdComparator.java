@@ -1,0 +1,16 @@
+package test2;
+
+import java.util.Comparator;
+
+public class StudentIdComparator implements Comparator<StudentInformation> {
+
+	@Override
+	public int compare(StudentInformation o1, StudentInformation o2) {
+		if(o1.studentId >o2.studentId)
+		return 1;
+		else
+			return -1;
+	}
+	
+
+}

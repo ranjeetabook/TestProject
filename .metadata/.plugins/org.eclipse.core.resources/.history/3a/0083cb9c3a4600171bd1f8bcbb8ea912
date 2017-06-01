@@ -1,0 +1,53 @@
+package test1;
+
+import java.io.*;
+import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class IPValidationRegex {
+	private Pattern pattern;
+	
+	
+	public IPValidationRegex(){
+		pattern = Pattern
+				.compile("^([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\.([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\.([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\.([01]?\\d\\d?|2[0-4]\\d|25[0-5])$");
+	}
+	public void validateIP(String input){
+		Matcher match = pattern.matcher(input);
+		//File invalidIpFile=new File("C:\\invalidIp.txt");
+		
+		while(match.matches())
+		{
+			System.out.println("InValid IP found: " + match.group());
+		}
+	}
+	public static void main(String[] args) {
+		
+		String inp = "";
+		File file = new File("C:\\Khitish\\software\\IpList.txt");
+		
+		try
+		{
+			Scanner scan = new Scanner(file);
+			IPValidationRegex ip=new IPValidationRegex();
+			while (scan.hasNextLine()) {
+				inp = scan.nextLine();
+				System.out.println("File inp string is "+inp);
+				ip.validateIP(inp);
+				
+			}
+		}catch(
+		FileNotFoundException f)
+		{
+			f.printStackTrace();
+		}
+
+		
+		
+
+		
+	}
+
+	
+}

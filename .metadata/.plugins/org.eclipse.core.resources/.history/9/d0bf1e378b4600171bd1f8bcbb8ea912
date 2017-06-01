@@ -1,0 +1,14 @@
+package test3;
+
+public class MeasureTool {
+ 
+	public static void main(String[] args) {
+	ExecutionClass method=new ExecutionClass();
+      long timeStart= System.nanoTime();
+      method.doSomething();
+      long timeEnd= System.nanoTime();
+      System.out.println("time taken to execute method is:" +(timeEnd-timeStart));
+      
+	}
+
+}

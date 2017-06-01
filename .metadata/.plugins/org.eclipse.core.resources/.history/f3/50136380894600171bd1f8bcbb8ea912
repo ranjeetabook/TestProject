@@ -1,0 +1,54 @@
+package test1;
+
+import java.io.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+/**
+ * 
+ * @author ranjeeta mishra
+ * @version 1.0
+ * reads a file and print ist of invalid ips
+ *
+ */
+public class IPValidationRegex {
+	private Pattern pattern;
+
+	public IPValidationRegex() {
+		pattern = Pattern.compile(
+				"^([01]\\d\\d|2[0-4]\\d|25[0-5])\\.([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\.([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\.([01]?\\d\\d?|2[0-4]\\d|25[0-5])$");
+		
+		
+	}
+
+	public void validateIP(String input) {
+		Matcher match = pattern.matcher(input);
+
+		if (!match.matches()) {
+			System.out.println("Invalid IP found,please verify  " + input);
+		}
+	}
+
+	public static void main(String[] args) throws IOException {
+
+		String inp = "";
+		File file = new File("\\IpList1.txt");
+		final FileReader fr = new FileReader(file);
+		final BufferedReader bfo = new BufferedReader(fr);
+
+		try {
+			IPValidationRegex ip = new IPValidationRegex();
+			while ((inp = bfo.readLine()) != null) {
+				ip.validateIP(inp);
+			}
+		} catch (FileNotFoundException f) {
+			f.printStackTrace();
+		}
+
+		finally {
+			fr.close();
+			bfo.close();
+		}
+
+	}
+
+}

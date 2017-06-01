@@ -1,0 +1,8 @@
+package test3;
+
+public interface MethodInterceptor<T> {
+	 public   Object invoke(T methodInvocation) throws Throwable ;
+		 
+	 
+
+}
